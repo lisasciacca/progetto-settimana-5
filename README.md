@@ -1,12 +1,13 @@
 
-# BLOOM - Piattaforma Quiz d'Esame --- ![Logo Bloom](assets)
+# BLOOM - Landing page --- ![Logo Bloom](img/logo.png)
 
 
-Questa repository contiene il codice sorgente di un'applicazione web interattiva per la gestione di , sviluppata per **BLOOM**. La piattaforma è progettata per .
+Questa repository contiene il codice sorgente di una landing pare, sviluppata per **BLOOM**. La piattaforma è progettata per accogliere il cliente, presentare l'azienda e i servizi offerti.
 
 ---
 
 > **Stato del progetto:** in fase di sviluppo. Questo file viene aggiornato a mano a mano che il progetto viene realizzato. Consulta le relative sezione per vedere lo stato di queste ultime.
+
 
 ## Indice
 - [Funzionalità](#funzionalità)
@@ -18,23 +19,17 @@ Questa repository contiene il codice sorgente di un'applicazione web interattiva
 - [Albero del dom](#albero-del-dom)
 - [Come funziona](#come-funziona)
 - [Convenzioni di codice](#convenzioni-di-codice)
-- [Il team 5 e il flusso di lavoro](#il-team-5-e-il-flusso-di-lavoro)
+- [Aggiornamenti](#aggiornamenti)
+- [Realizzato da](#realizzato-da)
 
 
 ### Funzionalità
 
-L'applicazione ha un'interfaccia moderna e reattiva con uno stile visivo curato e un flusso utente strutturato in tre fasi principali:
-
-1. **Schermata di benvenuto**: presentazione .
-
-**Funzionalità principali:**
-
-- **placeholder** loret ipsum.
-
+L'applicazione ha un'interfaccia moderna e minimale con uno stile visivo pulito e curato. 
 
 ## Anteprima
 
-- [Pagina di benvenuto](assets/img/welcome.png)
+- [Pagina principale](assets/)
 
 ## Tecnologie Utilizzate
 
@@ -46,7 +41,7 @@ L'applicazione ha un'interfaccia moderna e reattiva con uno stile visivo curato 
 
 1. **Clona il repository**:
    ```bash
-   git clone https://github.com/Fabioiad2/Team-5-Progetto-Build-week-1
+   git clone https://github.com/lisasciacca/progetto-settimana-5
    ```
 
 2. **Apri l'applicazione**:
@@ -74,13 +69,7 @@ L'applicazione ha un'interfaccia moderna e reattiva con uno stile visivo curato 
 
 ### Architettura
 
-L'app segue il pattern **stato → render → eventi**:
-
-1. **Stato**: La variabile "currentScreen" gestisce lo stato dell'applicazione.
-2. **Render**: La funzione "render" utilizza la condizione switch per renderizzare a seconda dello stato. Lo stato può assumere tre valori: "welcome", "quiz" e "results".
-3. **Eventi**:
-
----
+L'applicazione è costruita sul modello one-page.
 
 ## Albero del dom
 
@@ -96,22 +85,24 @@ Le domande sono oggetti in un array chiamato "QUESTIONS". Ogni oggetto ha una pr
 }
 ```
 
-### 1. Schermata di Benvenuto
-- Presentazione delle istruzioni di svolgimento dell'esame.
-- Pulsante **"Inizia"** per avviare la sessione di test.
-
 ### Aspetto grafico
 
-L'applicazione si presenta con un'interfaccia moderna 
+L'applicazione si presenta con un design pulito, moderno e minimale, progettato per offrire un'esperienza visiva professionale ed elegante. L'applicazione è inoltre pensata per essere mobile-first, con il design che varia leggermente a mano a mano che la dimensione dello schermo cresce.
+Si sviluppa su un'impostazione incentrata su toni scuri e chiari ben bilanciati, con una forte enfasi sul colore primario del brand: un verde elegante e naturale (tonalità basata su HSL 150, 60%, 30%), utilizzato per loghi, dettagli in evidenza e stati interattivi.
+Gli sfondi alternano sezioni luminose a blocchi scuri (#121212) per creare un piacevole contrasto visivo e dare profondità alla struttura a sezioni.
+Vengono impiegati font sans-serif lineari e altamente leggibili, con gerarchie ben definite (titoli d'impatto, sottotitoli tracciati e testi descrittivi con un’ottimizzata altezza di riga per una lettura confortevole)
+
+### Aggiornamenti 
+
+ver. 0 - File di base
+ver. 0.1 - Prima versione della pagina HTML aggiunta
+ver. 1.0 - Prima versione della pagina CSS aggiunta
+
 
 ### Convenzioni di codice
 
-- **camelCase** per tutte le variabili e **maiuscolo** per le costanti.
-- **Variabili, funzioni, costanti e chiavi degli oggetti in inglese**, con nomi intuitivi.
+- **camelCase** e lingua inglese per tutto.
 - **Commenti che favoriscono la comprensione del codice**.
-- Solo "const" e "let", mai "var".
-- "querySelector" / "querySelectorAll" per il DOM.
-- "addEventListener", mai "onclick" inline nell'HTML.
 
 ### Realizzato da
 

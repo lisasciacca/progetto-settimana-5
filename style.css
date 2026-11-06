@@ -1,8 +1,20 @@
 /* Bloom — Week Project Settimana V
    Reset minimale + tipografia di base. Da qui costruisci il layout. */
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Reset */
+
 *,
 *::before,
 *::after {
@@ -37,19 +49,27 @@ a {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
-/* header */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* header box-shadow della header allo scroll: 0 4px 16px rgba(0, 0, 0, 0.15)*/
 
 header {
-  border-bottom: 10px solid #eee;
+  border-bottom: 5px solid #eee;
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   .logo {
     color: hsl(150, 60%, 30%);
@@ -70,10 +90,11 @@ header {
       text-decoration: none;
       font-size: 0.95rem;
       align-self: center;
+      padding: 7px;
     }
 
     a:hover {
-      background-color: hsl(150, 60%, 95%);
+      background-color: hsl(150, 25%, 80%);
       color: hsl(150, 60%, 30%);
     }
 
@@ -85,19 +106,32 @@ header {
       height: 32px;
       border-radius: 50%;
       flex-shrink: 0;
+      cursor: pointer;
     }
 
     button:hover {
-      background-color: #f8e7e7;
-      cursor: pointer;
+      background-color: hsl(150, 25%, 80%);
     }
   }
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media (min-width: 768px) {
+  header {
+    padding: 20px;
+
+    .headerDiv {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      nav {
+        width: auto;
+        margin: 0;
+        gap: 25px;
+      }
+    }
+  }
 }
 
 /* Hero section */
@@ -111,7 +145,7 @@ main {
   justify-content: center;
   text-align: center;
   padding: 80px 20px;
-  height: 500px;
+  min-height: 70vh;
 
   .heroP {
     max-width: 90%;
@@ -119,29 +153,39 @@ main {
 
     h1 {
       margin-bottom: 10px;
+      font-size: 3rem;
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.5;
+      padding-left: 80px;
+      padding-right: 80px;
+      animation: fadeInUp 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+
     }
-  }
 
-  button {
-    background-color: #ffffff;
-    color: hsl(150, 60%, 30%);
-    border: none;
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-  }
+    button {
+      background-color: #f2f2f2;
+      color: hsl(150, 60%, 30%);
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      animation: fadeInUp 0.8s ease-out 0.4s forwards;
+      opacity: 0;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
 
-  button:hover {
-    background-color: #f2f2f2;
-    transform: translateY(-2px);
-    cursor: pointer;
+    button:hover {
+      background-color: hsl(150, 25%, 80%);
+    }
   }
 }
 
@@ -158,37 +202,92 @@ main {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
-    color: #121212;
+    color: hsl(150, 60%, 30%);
   }
 
-  .card {
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
+  .divCard {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 2px;
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
 
-    i {
-      font-size: 2rem;
-      color: hsl(150, 60%, 30%);
-      margin-bottom: 4px;
+    .card {
+      border: 1px solid #e0e0e0;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      i {
+        font-size: 2rem;
+        color: hsl(150, 60%, 30%);
+        margin-bottom: 4px;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0;
+      }
     }
 
-    h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 4px;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
+  }
+}
 
-    p {
-      font-size: 0.95rem;
-      line-height: 1.5;
+@media (min-width: 768px) {
+  .services {
+    .divCard {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .card {
+        flex: 1 1 280px;
+      }
+
+      .card:nth-child(3) {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .services {
+    .divCard {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .card {
+        flex: 1 1 280px;
+
+      }
+      .card:nth-child(3) {
+        flex: 1 1 280px;
+
+      }
     }
   }
 }
@@ -197,7 +296,6 @@ main {
 
 .team {
   padding: 60px 20px;
-  background-color: #ffffff;
   color: #121212;
   display: flex;
   flex-direction: column;
@@ -205,62 +303,113 @@ main {
 
   h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: center;
-    color: #121212;
+    color: hsl(150, 60%, 30%);
   }
 
-  .cardTeam {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 16px;
-    padding: 35px 30px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
+  .divTeam {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    gap: 4px;
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
 
-    .proPic {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background-color: hsl(150, 60%, 30%);
-      color: #ffffff;
+    .cardTeam {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 35px 30px;
+      margin-bottom: 0;
+      width: 100%;
+      max-width: 600px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-      box-shadow: 0 0 0 6px hsl(150, 60%, 92%);
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      gap: 4px;
+      box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      .proPic {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: hsl(150, 60%, 30%);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        box-shadow: 0 0 0 6px hsl(150, 60%, 92%);
+      }
+
+      .name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #121212;
+        margin: 0 0 4px 0;
+      }
+
+      .role {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: hsl(150, 60%, 30%);
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0;
+      }
     }
 
-    .name {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #121212;
-      margin: 0 0 4px 0;
-    }
-
-    .role {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: hsl(150, 60%, 30%);
-      margin-bottom: 12px;
-    }
-
-    p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin: 0;
+    .cardTeam:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
   }
 }
+
+@media (min-width: 768px) {
+  .team {
+    .divTeam {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .cardTeam {
+        flex: 1 1 280px;
+      }
+
+      .cardTeam:last-child {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .team {
+    .divTeam {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+
+      .cardTeam {
+        flex: 0 0 280px;
+        min-height: 300px;
+      }
+    }
+  }
+}
+
 
 /* Footer */
 
@@ -278,16 +427,31 @@ footer {
     align-items: center;
     text-align: center;
 
-    .logo {
-      color: hsl(150, 60%, 30%);
-      font-weight: 700;
-      font-size: 1.25rem;
+    .divLogoFooter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
 
-      p {
-        margin: 0 0 8px 0;
-        display: flex;
-        align-items: center;
-        gap: 8px;
+      .logo {
+        color: hsl(150, 60%, 30%);
+        font-weight: 700;
+        font-size: 1.25rem;
+
+        p {
+          margin: 0 0 8px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+        }
+      }
+
+      >p {
+        font-size: 0.95rem;
+        color: #aaaaaa;
+        margin: 0 0 25px 0;
+        text-align: center;
       }
     }
 
@@ -319,12 +483,6 @@ footer {
       }
     }
 
-    >p {
-      font-size: 0.95rem;
-      color: #aaaaaa;
-      margin: 0 0 25px 0;
-    }
-
     >p:last-child {
       font-size: 0.85rem;
       color: #777777;
@@ -333,8 +491,39 @@ footer {
   }
 }
 
+@media (min-width: 768px) {
+  footer {
+    .footerDiv {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      text-align: left;
+
+      .divLogoFooter {
+        align-items: flex-start;
+        text-align: left;
+
+        .logo p {
+          justify-content: flex-start;
+        }
+      }
+
+      ul {
+        margin: 0;
+      }
+
+      >p:last-child {
+        margin: 0;
+        text-align: right;
+      }
+    }
+  }
+}
+
 /* LIGHT MODE
-box-shadow della header allo scroll: 0 4px 16px rgba(0, 0, 0, 0.15)
+
 DARK MODE
 colore generale testo: #f0f0f0
 colore generale sfondo: #121212
