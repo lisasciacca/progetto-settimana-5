@@ -20,7 +20,7 @@
         <a href="#services">Servizi</a>
         <a href="#layout">Layout</a>
         <a href="#team">Team</a>
-        <a href="#contact">Contatti</a>
+        <a href="#contact" class="quote">Contatti</a>
         <button class="darkMode" type="button"><i class="fa-solid fa-moon"></i></button>
       </nav>
     </div>
@@ -111,6 +111,44 @@
 
     </div>
   </main>
+
+<div id="quoteModal" class="modalOverlay">
+  <div class="modalContent">
+    <button id="closeModalBtn" class="modalClose">&times;</button>
+    
+    <h2>Richiedi un preventivo</h2>
+    <p class="modalSubtitle">Raccontaci il tuo progetto: ti rispondiamo entro 48 ore.</p>
+    
+    <form id="quoteForm">
+      <div class="formGroup">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="formGroup">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="formGroup">
+        <label for="service">Servizio</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Scegli un servizio</option>
+          <option value="identitaVisiva">Identità visiva</option>
+          <option value="webDesign">Web design</option>
+          <option value="motionGraphic">Motion graphic</option>
+        </select>
+      </div>
+
+      <div class="formGroup">
+        <label for="message">Messaggio</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+
+      <button type="submit" class="submitBtn">Invia richiesta</button>
+    </form>
+  </div>
+</div>
 
   <footer id="siteFooter">
     <!-- Logo, social icons, copyright -->
