@@ -1,34 +1,107 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloom — Studio di design</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
 
-    <header id="site-header">
-      <!-- Logo + nav -->
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom — Studio di design</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <main>
+<body>
 
+  <header id="siteHeader">
+    <!-- Logo + nav -->
+    <div class="logo">
+      <p><i class="fa-solid fa-seedling"></i>Bloom</p>
+    </div>
+    <nav>
+      <a href="#services">Servizi</a>
+      <a href="#layout">Layout</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contatti</a>
+      <button class="darkMode" type="button">Luna</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
       <section class="hero">
         <!-- Titolo, sottotitolo, bottone CTA -->
+        <div class="heroP">
+          <h1>Trasformiamo idee in design</h1>
+          <p>Siamo uno studio creativo. Identità visiva, web e motion graphic per chi vuole farsi notare.</p>
+        </div>
+        <button class="quote" type="button">Richiedi preventivo</button>
       </section>
 
-      <section class="services">
+      <!-- <section class="works">
+       
+      </section> -->
+
+      <section id="services" class="services">
         <!-- 3 card servizi: icona + titolo + descrizione -->
+        <h2>I nostri servizi</h2>
+        <div class="card">
+          <i class="fa-solid fa-pen-nib"></i>
+          <h3>Identità visiva</h3>
+          <p>Logo, palette, tipografia e linee guida per un brand coerente, riconoscibile e duraturo.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-display"></i>
+          <h3>Web design</h3>
+          <p>Siti vetrina e landing page responsive, accessibili e ottimizzate per dispositivi mobile.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-film"></i>
+          <h3>Motion graphic</h3>
+          <p>Animazioni e brevi video per raccontare il prodotto, i social e le campagne pubblicitarie.</p>
+        </div>
       </section>
 
-    </main>
+      <section id="team" class="team">
+        <h2>Il nostro team</h2>
+        <div class="card cardTeam">
+          <div class="proPic">GR</div>
+          <p class="name">Giulia Rossi</p>
+          <p class="role">ART DIRECTOR</p>
+          <p>Cura l'identità visiva dei progetti, dal concept alla consegna finale.</p>
+        </div>
+        <div class="card cardTeam">
+          <div class="proPic">MB</div>
+          <p class="name">Marco Bianchi</p>
+          <p class="role">WEB DESIGNER</p>
+          <p>Progetta interfacce responsive accessibili, con un occhio al codice.</p>
+        </div>
+        <div class="card cardTeam">
+          <div class="proPic">SV</div>
+          <p class="name">Sara Verdi</p>
+          <p class="role">MOTION DESIGNER</p>
+          <p>Dà movimento ai brand con animazioni, video brevi e contenuti social.</p>
+        </div>
+      </section>
 
-    <footer id="site-footer">
-      <!-- Logo, social icons, copyright -->
-    </footer>
+      <!-- Carosello -->
 
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </main>
+
+  <footer id="siteFooter">
+    <!-- Logo, social icons, copyright -->
+    <div class="logo">
+      <p><i class="fa-solid fa-seedling"></i>Bloom</p>
+    </div>
+    <p>Studio di design fondato nel 2026.</p>
+   <ul>
+      <li><a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+      <li><a href="#" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a></li>
+    </ul>
+    <p>© Bloom 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
