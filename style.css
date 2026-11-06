@@ -1,7 +1,3 @@
-/* Bloom — Week Project Settimana V
-   Reset minimale + tipografia di base. Da qui costruisci il layout. */
-
-
 @media (prefers-reduced-motion: reduce) {
 
   *,
@@ -43,6 +39,7 @@ body {
   /*light mode color*/
   background-color: #fafafa;
   align-items: center;
+  overflow-anchor: none; /*to avoid screen glich*/
 }
 
 img {
