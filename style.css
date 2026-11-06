@@ -70,7 +70,7 @@ main {
   align-items: center;
 }
 
-/* header box-shadow della header allo scroll: 0 4px 16px rgba(0, 0, 0, 0.15)*/
+/* header */
 
 header {
   border-bottom: 5px solid #eee;
@@ -216,6 +216,105 @@ header.scrolled button {
 
     button:hover {
       background-color: hsl(150, 25%, 80%);
+    }
+  }
+}
+
+.works {
+  padding: 60px 20px;
+  color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: hsl(150, 60%, 30%);
+  }
+
+  .divWork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
+
+    .card {
+      border: 1px solid #e0e0e0;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+      }
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card:nth-child(1),
+    .card:nth-child(4) {
+      animation-delay: 0.1s;
+    }
+
+    .card:nth-child(2),
+    .card:nth-child(5) {
+      animation-delay: 0.25s;
+    }
+
+    .card:nth-child(3),
+    .card:nth-child(6) {
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .works {
+    .divWork {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+
+      .card {
+        flex: 1 1 45%;
+        max-width: 45%;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .works {
+    .divWork {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+
+      .card {
+        flex: 1 1 30%;
+        max-width: 30%;
+      }
     }
   }
 }
