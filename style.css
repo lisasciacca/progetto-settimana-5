@@ -1,6 +1,19 @@
 /* Bloom — Week Project Settimana V
    Reset minimale + tipografia di base. Da qui costruisci il layout. */
 
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -70,12 +83,14 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: all 0.3s ease;
 
   .logo {
     color: hsl(150, 60%, 30%);
     font-weight: 800;
     font-size: 1.5em;
     justify-self: center;
+    transition: font-size 0.3s ease;
   }
 
   nav {
@@ -113,6 +128,22 @@ header {
       background-color: hsl(150, 25%, 80%);
     }
   }
+}
+
+header.scrolled {
+  padding: 10px;
+  background-color: hsl(150, 60%, 30%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  color: #f2f2f2;
+}
+
+header.scrolled .logo {
+  font-size: 1.2em;
+  color: #f2f2f2;
+}
+
+header.scrolled button {
+  background-color: #f2f2f2;
 }
 
 @media (min-width: 768px) {
@@ -227,6 +258,8 @@ header {
       gap: 8px;
       box-sizing: border-box;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
 
       i {
         font-size: 2rem;
@@ -251,8 +284,22 @@ header {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
+
+    .card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.25s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.4s;
+    }
   }
 }
+
+
 
 @media (min-width: 768px) {
   .services {
@@ -282,11 +329,10 @@ header {
 
       .card {
         flex: 1 1 280px;
-
       }
+
       .card:nth-child(3) {
         flex: 1 1 280px;
-
       }
     }
   }
@@ -332,6 +378,8 @@ header {
       gap: 4px;
       box-sizing: border-box;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
 
       .proPic {
         width: 70px;
@@ -373,6 +421,18 @@ header {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
+
+    .cardTeam:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .cardTeam:nth-child(2) {
+      animation-delay: 0.25s;
+    }
+
+    .cardTeam:nth-child(3) {
+      animation-delay: 0.4s;
+    }
   }
 }
 
@@ -405,6 +465,7 @@ header {
       .cardTeam {
         flex: 0 0 280px;
         min-height: 300px;
+        min-width: 300px;
       }
     }
   }
